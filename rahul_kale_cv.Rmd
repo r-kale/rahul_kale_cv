@@ -1,0 +1,110 @@
+---
+name: Rahul Kale
+date: "`r format(Sys.time(), '%B, %Y')`"
+qualifications: BE-Mech, PGDBM, PGDDS
+position: General Manager, Factory Order Fulfillment, John Deere India Pvt. Ltd.
+address: Pune, India
+phone: +91 77708 11127
+email: kalerahul@johndeere.com
+# website: 
+# github: 
+# linkedin: 
+# twitter: 
+docname: Resume
+headcolor: 414141
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(vitae)
+googlesheets4::gs4_deauth()
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+# Education
+```{r education}
+googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo",
+  sheet = "education"
+  ) %>% detailed_entries(uni, dates, degree, loc, details)
+```
+
+# Assignments
+## A Brief Timeline
+\footnotesize
+In John Deere, I have had the fortune to work in multiple functions in various capacities. In these assignments, in addition to Pune factory, I could work with Dewas *(I relocated there)* and Sirhind factories while they were still being constructed.  
+The other significant aspect of my career has been the privilege to explore multiple facets of the functions; developing components at one end and developing factory sourcing at another.  
+The journey continues...
+
+```{r assignments}
+googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo",
+  sheet = "employment"
+  ) %>% 
+  arrange(desc(when)) %>% 
+  mutate(when = paste0(when," : ")) %>% 
+  brief_entries(glue::glue("\\textbf{<role>}: \\newline <details>", .open = "<", .close = ">"), when, with = area,.protect = FALSE)
+```
+
+
+# Leadership Experience
+## Few important learnings
+\footnotesize
+Each of my assignments brought me new learning and opportunities to apply skills gained along the way. I want to highlight few of those learning.
+
+```{r leadership_experience}
+googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo",
+  sheet = "leadership_experience"
+  ) %>% 
+  arrange(desc(to),group_rank) %>%
+  mutate(to = as.character(to)) %>% 
+  mutate(to = case_when(to == "2020" ~ "Current",
+                        TRUE ~ to)) %>% 
+  mutate(when = paste0(from," - ",to )) %>% 
+  detailed_entries(what,when,with,where,why,.protect = FALSE)
+
+```
+
+# Work Experience
+
+```{r work_experience}
+googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo",
+  sheet = "work_experience") %>% 
+  arrange(desc(last_held),group_rank) %>% 
+  detailed_entries(what = glue::glue("\\textbf{<what>} : \\textit{<dept> - <exp>}",.open = "<",.close = ">"),why = why,.protect = FALSE)
+```
+
+# Digitization Potential
+## Working with Data
+Increasingly technology and data have become more accessible. Leveraging these offer tremendous opportunities in changing the way we work, bringing in a completely new paradigm, enabling us to ask questions and expect *reproducible and repeatable* answers to those questions.  
+Seeing the potential of data in my area of work, i embarked on completing my Post Graduation in Data Science to help learn and drive progress in this exciting domain.  
+Here is summary of the work initiated in OFP:
+
+```{r data}
+googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo", sheet = "data") %>%
+  detailed_entries(what =  glue::glue("\\textbf{<step>}",.open = "<",.close = ">"), why = details,.protect = FALSE)
+
+```
+
+# Distinctive Mentions
+
+```{r distinctive_mentions}
+googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo", sheet = "distinctive_mentions") %>%
+  arrange(desc(year)) %>% 
+  brief_entries(what = glue::glue("\\textbf{<mention>} \\newline <details>",.open = "<",.close = ">"), when = year,.protect = FALSE)
+
+```
+
+
+
+```{r}
+
+```
+
