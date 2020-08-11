@@ -5,11 +5,11 @@ qualifications: BE-Mech, PGDBM, PGDDS
 position: General Manager, Factory Order Fulfillment, John Deere India Pvt. Ltd.
 address: Pune, India
 phone: +91 77708 11127
-email: kalerahul@johndeere.com
+email: rahul.kale@gmail.com
 # website: 
-# github: 
-# linkedin: 
-# twitter: 
+github: r-kale
+linkedin: rahul-kale-723a0720
+twitter: rahulvilaskale
 docname: Resume
 headcolor: 414141
 output: 
@@ -25,6 +25,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 ```
 
 # Education
+
 ```{r education}
 googlesheets4::read_sheet(
   "https://docs.google.com/spreadsheets/d/1s0jXD3LGOmCZnaT0He1ibfQi9Kf9AqE9d_s0_L3eNIo",
@@ -35,7 +36,7 @@ googlesheets4::read_sheet(
 # Assignments
 ## A Brief Timeline
 \footnotesize
-In John Deere, I have had the fortune to work in multiple functions in various capacities. In these assignments, in addition to Pune factory, I could work with Dewas *(I relocated there)* and Sirhind factories while they were still being constructed.  
+In John Deere, I have had the fortune to work in multiple functions in various capacities and also in all the manufacturing facilities, Pune, Dewas *(I relocated there)* and Sirhind factories.  
 The other significant aspect of my career has been the privilege to explore multiple facets of the functions; developing components at one end and developing factory sourcing at another.  
 The journey continues...
 
@@ -49,7 +50,7 @@ googlesheets4::read_sheet(
   brief_entries(glue::glue("\\textbf{<role>}: \\newline <details>", .open = "<", .close = ">"), when, with = area,.protect = FALSE)
 ```
 
-
+\newpage
 # Leadership Experience
 ## Few important learnings
 \footnotesize
@@ -81,8 +82,8 @@ googlesheets4::read_sheet(
 
 # Digitization Potential
 ## Working with Data
-Increasingly technology and data have become more accessible. Leveraging these offer tremendous opportunities in changing the way we work, bringing in a completely new paradigm, enabling us to ask questions and expect *reproducible and repeatable* answers to those questions.  
-Seeing the potential of data in my area of work, i embarked on completing my Post Graduation in Data Science to help learn and drive progress in this exciting domain.  
+With technology and data being increasingly accessible, leveraging these offer tremendous opportunities in changing the way we work, bringing in a completely new paradigm, enabling us to ask questions and expect ***reproducible and repeatable*** answers to those questions.  
+Seeing the potential of data in my area of work, I am working on driving progress in this exciting domain.  
 Here is summary of the work initiated in OFP:
 
 ```{r data}
@@ -102,9 +103,10 @@ googlesheets4::read_sheet(
 
 ```
 
+# Intrests
 
-
-```{r}
+```{r intrests}
 
 ```
+
 
