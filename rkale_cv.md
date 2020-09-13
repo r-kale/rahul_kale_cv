@@ -5,7 +5,11 @@ Contains the code I created for my CV which uses [vitae](https://github.com/mitc
 
 # Content
 
-1. [A Longer Version](Long)
+1. [Long_Version](Long_Version)
+2. [Short_Version](Short_Version)
 
-## Long
+## Long_Version
+[![CV](preview.png)](https://github.com/r-kale/rahul_kale_cv/blob/master/rahul_kale_cv.pdf)
+
+## Short_Version
 [![CV](preview.png)](https://github.com/r-kale/rahul_kale_cv/blob/master/rahul_kale_cv.pdf)
