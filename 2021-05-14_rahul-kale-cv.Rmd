@@ -1,0 +1,132 @@
+---
+name: Rahul Kale
+date: "`r format(Sys.time(), '%B, %Y')`"
+qualifications: BE-Mech, PGDBM, PGDDS
+position: General Manager, Fulfillment Planning, John Deere India Pvt. Ltd.
+address: Pune, India
+phone: +91 77708 11127
+email: rahul.kale@gmail.com
+github: r-kale
+linkedin: rahul-kale-723a0720
+twitter: rahulvilaskale
+docname: Resume
+headcolor: ff9900
+always_allow_html: yes
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(vitae)
+library(fontawesome)
+googlesheets4::gs4_deauth()
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+# Summary
+
+Supply Chain Professional with cross domain experience of over 17 years with passion for leveraging technology to gain business edge. Successfully established raw material supply chain at multiple greenfield facilities that drove customer and product base expansion.
+
+Leading Fulfillment Planning for India Factories driving end to end planning by building alliance with senior leadership of Operations, Finance and Marketing.
+
+Actively guides a diverse team on forecasting and satisfying demand through factory operation plans within bounds of constraint. Holds responsibility of optimizing the product inventory and own product inventory assets.
+
+# Skills & Key Highlight
+
+```{r leadership_experience, include=FALSE}
+skills <- googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1X6zGvsi7PJzCpddrmdG5CHUz_4oWUFuBtaK2dLLy7bg",
+  sheet = "leadership_experience"
+  ) %>% janitor::clean_names()
+list_skill <- glue::glue_collapse(
+                      paste0("-   ",
+                             "\\textbf{",skills$skill,"}",
+                             "\\newline",
+                             "  \\textit{",skills$key_highlight,"}"),
+                      sep = "\n")
+```
+
+`r list_skill`
+
+# Work Experience
+
+```{r work_experience,include=FALSE}
+work_experience <- googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1X6zGvsi7PJzCpddrmdG5CHUz_4oWUFuBtaK2dLLy7bg",
+  sheet = "work_experience") %>% 
+  arrange(desc(last_held),group_rank) %>% 
+  janitor::clean_names()
+
+current_date <- format(lubridate::today(),"%b-%Y")
+wrk_exp <- work_experience %>% 
+  arrange(desc(last_held),dept,group_rank) %>% 
+  mutate(start = format(start,"%b-%Y"),
+                     last_held = format(last_held,"%b-%Y")) %>% 
+  mutate(last_held = if_else(last_held == current_date,"Current",last_held)) %>% 
+  select(-group_rank,-area) %>% 
+  group_by(title,organization,start,last_held,dept,location) %>% 
+  mutate(description = paste("- \\hspace{5mm} ",description,collapse = "\\newline ")) %>%
+  ungroup() %>% 
+  unique()
+
+wrk_list <- wrk_exp %>% 
+  ungroup() %>% 
+  transmute(wrk_list = paste0("\\textbf{",title," - ",dept,"} ","\\hfill ",organization," - ",location,
+                              "\\newline ",
+                              ". ","\\hfill ",start,"  -  ",last_held,
+                           "\\newline ",
+                           "\\textit{",description,"} ","\\newline ",
+                           "\\vspace{2mm} ","\\newline")) %>% 
+  pull() %>% 
+  glue::glue_collapse(sep = "\n")
+```
+
+`r wrk_list`
+
+# Distinctive Mentions
+
+```{r distinctive_mentions,include=FALSE}
+awards <- googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1X6zGvsi7PJzCpddrmdG5CHUz_4oWUFuBtaK2dLLy7bg", sheet = "distinctive_mentions") %>% janitor::clean_names() %>% 
+  arrange(desc(year)) 
+
+award_list <- awards %>% 
+  mutate(aw_list = paste0("\\textbf{",year," - ",mention,"}",
+                          "\\newline",
+                          "\\textit{",details,"}")) %>% 
+  select(aw_list)
+award_list <- glue::glue_collapse(paste0("-   ",award_list$aw_list),sep = "\n")
+```
+
+`r award_list`
+
+# Education
+
+```{r education,include=FALSE}
+education <- googlesheets4::read_sheet(
+  "https://docs.google.com/spreadsheets/d/1X6zGvsi7PJzCpddrmdG5CHUz_4oWUFuBtaK2dLLy7bg",
+  sheet = "education"
+  ) %>% janitor::clean_names() %>% 
+  arrange(desc(end))
+
+dg_list <- education %>% 
+  mutate(start = format(start,"%b-%Y"),
+                     end = format(end,"%b-%Y")) %>% 
+  mutate(dg_list = paste0("\\textbf{",str_to_upper(degree),"}",
+                          "\\hfill ",
+                          "  \\textit{",start," \\hspace{2mm}","-"," \\hspace{2mm}",end,"}",
+                          "\\newline ",
+                          uni,
+                          "\\newline ",
+                          "\\textit{",details,"}",
+                          "\\newline ","\\newline")) %>% 
+  select(dg_list) %>% 
+  pull() %>% 
+  glue::glue_collapse(sep = "\n")
+
+
+```
+
+`r dg_list`

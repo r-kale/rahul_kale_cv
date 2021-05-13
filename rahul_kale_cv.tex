@@ -57,7 +57,8 @@
 
 \name{Rahul Kale}{}
 
-\position{General Manager, Factory Order Fulfillment, John Deere India Pvt. Ltd.}
+\position{General Manager, Factory Order Fulfillment, John Deere India
+Pvt. Ltd.}
 \address{Pune, India}
 
 \mobile{+91 77708 11127}
@@ -74,24 +75,34 @@
 
 \usepackage{booktabs}
 
-% Templates for detailed entries
-% Arguments: what when with where why
-\usepackage{etoolbox}
-\def\detaileditem#1#2#3#4#5{%
-\cventry{#1}{#3}{#4}{#2}{\ifx#5\empty\else{\begin{cvitems}#5\end{cvitems}}\fi}\ifx#5\empty{\vspace{-4.0mm}}\else\fi}
-\def\detailedsection#1{\begin{cventries}#1\end{cventries}}
-
-% Templates for brief entries
-% Arguments: what when with
-\def\briefitem#1#2#3{\cvhonor{}{#1}{#3}{#2}}
-\def\briefsection#1{\begin{cvhonors}#1\end{cvhonors}}
-
 \providecommand{\tightlist}{%
 	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 %------------------------------------------------------------------------------
 
 
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \begin{document}
 
@@ -103,7 +114,7 @@
 % Leave any of these blank if they are not needed
 % 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
 \makecvfooter
-  {August, 2020}
+  {May, 2021}
     {Rahul Kale~~~·~~~Resume}
   {\thepage}
 
@@ -118,7 +129,21 @@
 \hypertarget{education}{%
 \section{Education}\label{education}}
 
-\detailedsection{\detaileditem{Pune University}{June. 1999 - May. 2003}{Bachelor of Engineering}{Pune, India}{\item{Completed my Mechanical Engineering degree with overall First Class with Distinction grade, Secured 71.9\% in the degree examination, 7th in a class of 74 students.}\item{Research Project included product (tool changer) design and development for a educational CNC lathe machine}}\detaileditem{Symbiosis International University}{Jan. 2010 - Feb. 2012}{Post Graduate Diploma in Business Management}{Pune, India}{\item{A two year comprehensive Business Management Diploma by Symbiosis University, a top university for management studies in India}\item{Studied a range of subjects covering Supply Chain, Operation Management \& Financial Management securing 1st Rank in the course.}\item{Course project included defining supply management strategy, new supplier onboarding and development for John Deere Sirhind Works.}}\detaileditem{National Institute of Security Management \& Mumbai University}{May. 2018 - Nov. 2019}{Post Graduate Diploma in Data Science}{Mumbai, India}{\item{Studied a broad collection of units covering many aspects of data science. I learned data manipulation, statistics and econometrics, machine learning and behavioural analytics, securing 2nd Rank in the course with First Class and 81.25\% marks.}\item{My course project included developing product recommendation system for old obsolete products with closest equivalent current products based on machine learning}}}
+\begin{cventries}
+    \cventry{Pune University}{Bachelor of Engineering}{Pune, India}{June. 1999 - May. 2003}{\begin{cvitems}
+\item Completed my Mechanical Engineering degree with overall First Class with Distinction grade, Secured 71.9\% in the degree examination, 7th in a class of 74 students.
+\item Research Project included product (tool changer) design and development for a educational CNC lathe machine
+\end{cvitems}}
+    \cventry{Symbiosis International University}{Post Graduate Diploma in Business Management}{Pune, India}{Jan. 2010 - Feb. 2012}{\begin{cvitems}
+\item A two year comprehensive Business Management Diploma by Symbiosis University, a top university for management studies in India
+\item Studied a range of subjects covering Supply Chain, Operation Management \& Financial Management securing 1st Rank in the course.
+\item Course project included defining supply management strategy, new supplier onboarding and development for John Deere Sirhind Works.
+\end{cvitems}}
+    \cventry{National Institute of Security Management \& Mumbai University}{Post Graduate Diploma in Data Science}{Mumbai, India}{May. 2018 - Nov. 2019}{\begin{cvitems}
+\item Studied a broad collection of units covering many aspects of data science. I learned data manipulation, statistics and econometrics, machine learning and behavioural analytics, securing 2nd Rank in the course with First Class and 81.25\% marks.
+\item My course project included developing product recommendation system for old obsolete products with closest equivalent current products based on machine learning
+\end{cvitems}}
+\end{cventries}
 
 \hypertarget{assignments}{%
 \section{Assignments}\label{assignments}}
@@ -128,11 +153,25 @@
 
 \footnotesize
 
-In John Deere, I have had the fortune to work in multiple functions in various capacities and also in all the manufacturing facilities, Pune, Dewas \emph{(I relocated there)} and Sirhind factories.\\
-The other significant aspect of my career has been the privilege to explore multiple facets of the functions; developing components at one end and developing factory sourcing at another.\\
+In John Deere, I have had the fortune to work in multiple functions in
+various capacities and also in all the manufacturing facilities, Pune,
+Dewas \emph{(I relocated there)} and Sirhind factories.\\
+The other significant aspect of my career has been the privilege to
+explore multiple facets of the functions; developing components at one
+end and developing factory sourcing at another.\\
 The journey continues\ldots{}
 
-\briefsection{\briefitem{\textbf{India Factory OF Manager}: \newline Lead the Factory OF for Pune, Dewas and Sirhind.}{2016 : }{Order Fulfillment.}\briefitem{\textbf{Factory SM Manager}: \newline Setup the process and build team for starting the Dewas Tractor Factory.}{2013 : }{Supply Chain.}\briefitem{\textbf{Factory SM Manager}: \newline Lead the Factory OF Supply Chain in Dewas.}{2013 : }{Supply Chain.}\briefitem{\textbf{Development Lead}: \newline Lead the Supply Chain Sheet Metal and Fabrication Commodity.}{2010 : }{Supply Chain.}\briefitem{\textbf{Development Lead}: \newline Lead the Harvester Project as part of Supply Chain including localization of the machine in Sirhind.}{2010 : }{Supply Chain.}\briefitem{\textbf{Manufacturing Project Lead}: \newline Lead for the Krish Project for Manufacturing Engineering, an introduction of a new product family with over 7 million USD budget. This project presented a rare opportunity to work with complete product development cycle from conception to Start of Production.}{2006 : }{Mfg. Engg.}\briefitem{\textbf{Industrial Engineer}: \newline Lead implementation of WPlanner, a time study tool in John Deere Pune Works.}{2005 : }{Mfg. Engg.}\briefitem{\textbf{Line Design}: \newline Selected as Management Trainee, a fast track program in L\&T. Introduced new manufacturing stations and worked on capacity and line design.}{2004 : }{Mfg. Engg.}\briefitem{\textbf{OFP Buyer}: \newline Joined as a fresh Graduate with L\&T - John Deere, responsible for hardware and sheet metal procurement.}{2003 : }{Supply Chain.}}
+\begin{cvhonors}
+    \cvhonor{}{\textbf{India Factory OF Manager}: \newline Lead the Factory OF for Pune, Dewas and Sirhind.}{Order Fulfillment.}{2016 : }
+    \cvhonor{}{\textbf{Factory SM Manager}: \newline Setup the process and build team for starting the Dewas Tractor Factory.}{Supply Chain.}{2013 : }
+    \cvhonor{}{\textbf{Factory SM Manager}: \newline Lead the Factory OF Supply Chain in Dewas.}{Supply Chain.}{2013 : }
+    \cvhonor{}{\textbf{Development Lead}: \newline Lead the Supply Chain Sheet Metal and Fabrication Commodity.}{Supply Chain.}{2010 : }
+    \cvhonor{}{\textbf{Development Lead}: \newline Lead the Harvester Project as part of Supply Chain including localization of the machine in Sirhind.}{Supply Chain.}{2010 : }
+    \cvhonor{}{\textbf{Manufacturing Project Lead}: \newline Lead for the Krish Project for Manufacturing Engineering, an introduction of a new product family with over 7 million USD budget. This project presented a rare opportunity to work with complete product development cycle from conception to Start of Production.}{Mfg. Engg.}{2006 : }
+    \cvhonor{}{\textbf{Industrial Engineer}: \newline Lead implementation of WPlanner, a time study tool in John Deere Pune Works.}{Mfg. Engg.}{2005 : }
+    \cvhonor{}{\textbf{Line Design}: \newline Selected as Management Trainee, a fast track program in L\&T. Introduced new manufacturing stations and worked on capacity and line design.}{Mfg. Engg.}{2004 : }
+    \cvhonor{}{\textbf{OFP Buyer}: \newline Joined as a fresh Graduate with L\&T - John Deere, responsible for hardware and sheet metal procurement.}{Supply Chain.}{2003 : }
+\end{cvhonors}
 
 \newpage
 
@@ -144,14 +183,75 @@ The journey continues\ldots{}
 
 \footnotesize
 
-Each of my assignments brought me new learning and opportunities to apply skills gained along the way. I want to highlight few of those learning.
+Each of my assignments brought me new learning and opportunities to
+apply skills gained along the way. I want to highlight few of those
+learning.
 
-\detailedsection{\detaileditem{Managing through COVID}{2020 - Current}{Managing Disruption}{Order Fulfillment}{\item{I actively worked on maintaining team engagement in lockdown period with regular {\textit{\textbf{communication,}}} events such as virtual coffee, supporting them through home working, and ensuring meaningful projects in a lockdown of more than 40 days.}\item{Develop {\textit{\textbf{scenario planning}}} to work through resumption plans of factory and arrive at optimum market commitments and factory stretch. Execute the plan and reconcile  with on-the-ground challenges.}\item{While we have lot to learn, the pandemic is a humbling experience which makes us evaluate whether we have {\textit{\textbf{over-optimized our businesses}}} and potential of disruptions due to black swan events.}}\detaileditem{Digital Transformation}{2016 - 2019}{Lead change management}{Order Fulfillment}{\item{Recognizing the urgent need to move away from traditional processes such as {\textit{\textbf{manual}}} excel based planning to overcome the challenges of {\textit{one version of truth, inefficiencies in scaling, lack of reproducibility and making the process {\textbf{vulnerable to increasing complexity.}}}}}\item{Overcoming the questions of {\textit{why-break-a-working-system, this-increases-work, and why-learn-something-new}}}\item{My learnings: Start small and with step by step approach, drive smaller changes first or easy wins enabling all to see benefits of change.}}\detaileditem{Strategy and Execution}{2013 - 2016}{Build for future}{Supply Chain}{\item{In this role, I was responsible to {\textit{\textbf{develop procurement and warehouse strategy}}} and process and overall compliance for Dewas OF Supply Chain.}\item{Implemented 100\% raw material warehouse operations outsourcing.}\item{I continued working in Dewas beyond the startup phase and successfully executed SM operations for a total of 3 years. We also had the satisfaction of completing the comprehensive {\textit{\textbf{Internal Control Audit}}} in Dewas with a {\textit{\textbf{high score}}} and no unfavourable remarks.}}\detaileditem{Establish Supply Base}{2010 - 2013}{Navigating unknown challenges}{Supply Chain}{\item{In my first job in managerial role I was responsible for new part development in sheet metal commodity, tooling development, costing and price settlement. I was also responsible from Supply Chain side for start-up of Grain Harvester facility at Sirhind}\item{Sirhind facility was the first endeavour for bringing in {\textit{\textbf{Grain Harvester}}} ,in India from John Deere other than tractors. The project involved {\textit{\textbf{rapid localization}}} of parts and implementation of, {\textit{\textbf{kitting process from China}}} ,for other remaining parts.}\item{Me and my team was responsible for identifying and {\textit{\textbf{developing supply base}}} for sourcing of the new complexity introduced by Harvesters, tooling development component development and price settlement.}\item{I worked with the {\textit{\textbf{China sourcing}}} team for consolidating the common parts which were not part of immediate localization efforts. We onboarded a new supplier to consolidate the parts from the supply base, do quality checks and follow a import schedule.}}\detaileditem{Creating trust}{2006 - 2010}{Influencing}{Manufacturing Engineering}{\item{For the {\textit{\textbf{implementation of time standard}}}, I had the opportunity to work on a new tool {\textit{WPlanner}} and interact with the workforce, explaining them the changes in work standard which would impact the work pace.}\item{While working as the lead for Manufacturing Design subprocess on {\textit{\textbf{5C product line introduction}}}, I worked with my colleagues to ensure the activity of {\textit{capital procurement, line design, workstation changes}} were executed as per project expectations and timeline.}\item{Both the projects involved working as a individual contributor while working with multiple stakeholders. This phase taught me the importance of {\textit{\textbf{building relationships}}}, developing {\textit{\textbf{trust and credibility}}} and acting in fair and transparent manner to be successful in executing the goals.}}}
+\begin{cventries}
+    \cventry{Managing through COVID}{Managing Disruption}{Order Fulfillment}{2020 - Current}{\begin{cvitems}
+\item I actively worked on maintaining team engagement in lockdown period with regular {\textit{\textbf{communication,}}} events such as virtual coffee, supporting them through home working, and ensuring meaningful projects in a lockdown of more than 40 days.
+\item Develop {\textit{\textbf{scenario planning}}} to work through resumption plans of factory and arrive at optimum market commitments and factory stretch. Execute the plan and reconcile  with on-the-ground challenges.
+\item While we have lot to learn, the pandemic is a humbling experience which makes us evaluate whether we have {\textit{\textbf{over-optimized our businesses}}} and potential of disruptions due to black swan events.
+\end{cvitems}}
+    \cventry{Digital Transformation}{Lead change management}{Order Fulfillment}{2016 - 2019}{\begin{cvitems}
+\item Recognizing the urgent need to move away from traditional processes such as {\textit{\textbf{manual}}} excel based planning to overcome the challenges of {\textit{one version of truth, inefficiencies in scaling, lack of reproducibility and making the process {\textbf{vulnerable to increasing complexity.}}}}
+\item Overcoming the questions of {\textit{why-break-a-working-system, this-increases-work, and why-learn-something-new}}
+\item My learnings: Start small and with step by step approach, drive smaller changes first or easy wins enabling all to see benefits of change.
+\end{cvitems}}
+    \cventry{Strategy and Execution}{Build for future}{Supply Chain}{2013 - 2016}{\begin{cvitems}
+\item In this role, I was responsible to {\textit{\textbf{develop procurement and warehouse strategy}}} and process and overall compliance for Dewas OF Supply Chain.
+\item Implemented 100\% raw material warehouse operations outsourcing.
+\item I continued working in Dewas beyond the startup phase and successfully executed SM operations for a total of 3 years. We also had the satisfaction of completing the comprehensive {\textit{\textbf{Internal Control Audit}}} in Dewas with a {\textit{\textbf{high score}}} and no unfavourable remarks.
+\end{cvitems}}
+    \cventry{Establish Supply Base}{Navigating unknown challenges}{Supply Chain}{2010 - 2013}{\begin{cvitems}
+\item In my first job in managerial role I was responsible for new part development in sheet metal commodity, tooling development, costing and price settlement. I was also responsible from Supply Chain side for start-up of Grain Harvester facility at Sirhind
+\item Sirhind facility was the first endeavour for bringing in {\textit{\textbf{Grain Harvester}}} ,in India from John Deere other than tractors. The project involved {\textit{\textbf{rapid localization}}} of parts and implementation of, {\textit{\textbf{kitting process from China}}} ,for other remaining parts.
+\item Me and my team was responsible for identifying and {\textit{\textbf{developing supply base}}} for sourcing of the new complexity introduced by Harvesters, tooling development component development and price settlement.
+\item I worked with the {\textit{\textbf{China sourcing}}} team for consolidating the common parts which were not part of immediate localization efforts. We onboarded a new supplier to consolidate the parts from the supply base, do quality checks and follow a import schedule.
+\end{cvitems}}
+    \cventry{Creating trust}{Influencing}{Manufacturing Engineering}{2006 - 2010}{\begin{cvitems}
+\item For the {\textit{\textbf{implementation of time standard}}}, I had the opportunity to work on a new tool {\textit{WPlanner}} and interact with the workforce, explaining them the changes in work standard which would impact the work pace.
+\item While working as the lead for Manufacturing Design subprocess on {\textit{\textbf{5C product line introduction}}}, I worked with my colleagues to ensure the activity of {\textit{capital procurement, line design, workstation changes}} were executed as per project expectations and timeline.
+\item Both the projects involved working as a individual contributor while working with multiple stakeholders. This phase taught me the importance of {\textit{\textbf{building relationships}}}, developing {\textit{\textbf{trust and credibility}}} and acting in fair and transparent manner to be successful in executing the goals.
+\end{cvitems}}
+\end{cventries}
 
 \hypertarget{work-experience}{%
 \section{Work Experience}\label{work-experience}}
 
-\detailedsection{\detaileditem{\textbf{Sales and  Operation Planning} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\item{Lead a team of planning engineers for doing Sales and Operation Planning for Pune, Dewas and Sirhind factories in India. Planning involves domestic India forecast for rolling 18 month and working with stakeholders for export planning. Manage annual volume of 100K tractors with 20K+ DT aggregates among other interfactory parts}}\detaileditem{\textbf{Production Planning and Control} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\item{Guide the team for day to day production planning, guiding on balancing constraints and executing control}}\detaileditem{\textbf{Product Configuration \& Complexity Management} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\item{Guide the team to develop complexity index, understand pruning of portfolio to limit variant proliferation and for new EPDP projects work on creating variant configurations}}\detaileditem{\textbf{Complete Goods Asset Management} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\item{Develop targets and band charts for Finished Good Inventory, execute control to manage the Inventory. Work with finance to manage aging of FG and appropriate liquidation plans. Work with stakeholders for PxP DOH targets and control.}}\detaileditem{\textbf{Factory Leadership Council Member} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\item{Participate and Contribute in Factory Leadership Council on strategic planning and initiatives, long term planning, annual goal setting among other.}}\detaileditem{\textbf{Direct Material Procurement} : \textit{Supply Chain Management - 6+ years}}{}{}{}{\item{Leading a team of buyers for establishing and executing procurement policies and managing procurement with diverse and international Supply Base for commodities including Sheet Metal, Electrical, Hydraulic, Castings and Machining, Gear and Shafts, Hardware, Oil and Coolants among others. Managing annual procurement in excess of m\$100.}\item{Leading warehouse staff for working through warehouse plans including designing layouts and storage systems, replenishment systems, Kanban or 2-bin systems. Defining material handling needs and working on optimum layouts for reducing congestion. Management of Docks and receipt planning. Designing transport storage systems for optimized logistics cost.}}\detaileditem{\textbf{Inventory Management and Control} : \textit{Supply Chain Management - 6+ years}}{}{}{}{\item{Defining Inventory DOH targets, SAP MRP parameters, and working with suppliers and buyers to optimize procurement and minimize inventory. Defining Cycle count process based on ABC categorization and ensuring inventory accuracy.}}\detaileditem{\textbf{Part Development} : \textit{Supply Chain Management - 6+ years}}{}{}{}{\item{Leading team of PDP SM engineers for managing development lifecycle from design drawings to PPAP of Sheet Metal components.}\item{Defining costing norms, doing should-cost analysis and settling part cost with suppliers. Working on tool design, production process and establishing quality norms for regular procurement.}}\detaileditem{\textbf{Line Design} : \textit{Manufacturing Engineering - 5+ years}}{}{}{}{\item{As a Industrial Engineer define line or station layout, work content, conduct time study and establish work norms.}\item{Engage with indirect suppliers for procurement of tools, machine and equipments for capital purchase and establish required manufacturing capacity.}\item{Work on EPDP process and Manufacturing Design engineer and lead through completion of all program execution phases.}}}
+\begin{cventries}
+    \cventry{\textbf{Sales and  Operation Planning} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\begin{cvitems}
+\item Lead a team of planning engineers for doing Sales and Operation Planning for Pune, Dewas and Sirhind factories in India. Planning involves domestic India forecast for rolling 18 month and working with stakeholders for export planning. Manage annual volume of 100K tractors with 20K+ DT aggregates among other interfactory parts
+\end{cvitems}}
+    \cventry{\textbf{Production Planning and Control} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\begin{cvitems}
+\item Guide the team for day to day production planning, guiding on balancing constraints and executing control
+\end{cvitems}}
+    \cventry{\textbf{Product Configuration \& Complexity Management} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\begin{cvitems}
+\item Guide the team to develop complexity index, understand pruning of portfolio to limit variant proliferation and for new EPDP projects work on creating variant configurations
+\end{cvitems}}
+    \cventry{\textbf{Complete Goods Asset Management} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\begin{cvitems}
+\item Develop targets and band charts for Finished Good Inventory, execute control to manage the Inventory. Work with finance to manage aging of FG and appropriate liquidation plans. Work with stakeholders for PxP DOH targets and control.
+\end{cvitems}}
+    \cventry{\textbf{Factory Leadership Council Member} : \textit{Order Fulfillment - 5+ years}}{}{}{}{\begin{cvitems}
+\item Participate and Contribute in Factory Leadership Council on strategic planning and initiatives, long term planning, annual goal setting among other.
+\end{cvitems}}
+    \cventry{\textbf{Direct Material Procurement} : \textit{Supply Chain Management - 6+ years}}{}{}{}{\begin{cvitems}
+\item Leading a team of buyers for establishing and executing procurement policies and managing procurement with diverse and international Supply Base for commodities including Sheet Metal, Electrical, Hydraulic, Castings and Machining, Gear and Shafts, Hardware, Oil and Coolants among others. Managing annual procurement in excess of m\$100.
+\item Leading warehouse staff for working through warehouse plans including designing layouts and storage systems, replenishment systems, Kanban or 2-bin systems. Defining material handling needs and working on optimum layouts for reducing congestion. Management of Docks and receipt planning. Designing transport storage systems for optimized logistics cost.
+\end{cvitems}}
+    \cventry{\textbf{Inventory Management and Control} : \textit{Supply Chain Management - 6+ years}}{}{}{}{\begin{cvitems}
+\item Defining Inventory DOH targets, SAP MRP parameters, and working with suppliers and buyers to optimize procurement and minimize inventory. Defining Cycle count process based on ABC categorization and ensuring inventory accuracy.
+\end{cvitems}}
+    \cventry{\textbf{Part Development} : \textit{Supply Chain Management - 6+ years}}{}{}{}{\begin{cvitems}
+\item Leading team of PDP SM engineers for managing development lifecycle from design drawings to PPAP of Sheet Metal components.
+\item Defining costing norms, doing should-cost analysis and settling part cost with suppliers. Working on tool design, production process and establishing quality norms for regular procurement.
+\end{cvitems}}
+    \cventry{\textbf{Line Design} : \textit{Manufacturing Engineering - 5+ years}}{}{}{}{\begin{cvitems}
+\item As a Industrial Engineer define line or station layout, work content, conduct time study and establish work norms.
+\item Engage with indirect suppliers for procurement of tools, machine and equipments for capital purchase and establish required manufacturing capacity.
+\item Work on EPDP process and Manufacturing Design engineer and lead through completion of all program execution phases.
+\end{cvitems}}
+\end{cventries}
 
 \hypertarget{digitization-potential}{%
 \section{Digitization Potential}\label{digitization-potential}}
@@ -159,15 +259,57 @@ Each of my assignments brought me new learning and opportunities to apply skills
 \hypertarget{working-with-data}{%
 \subsection{Working with Data}\label{working-with-data}}
 
-With technology and data being increasingly accessible, leveraging these offer tremendous opportunities in changing the way we work, bringing in a completely new paradigm, enabling us to ask questions and expect \textbf{\emph{reproducible and repeatable}} answers to those questions.\\
-Seeing the potential of data in my area of work, I am working on driving progress in this exciting domain.\\
+With technology and data being increasingly accessible, leveraging these
+offer tremendous opportunities in changing the way we work, bringing in
+a completely new paradigm, enabling us to ask questions and expect
+\textbf{\emph{reproducible and repeatable}} answers to those
+questions.\\
+Seeing the potential of data in my area of work, I am working on driving
+progress in this exciting domain.\\
 Here is summary of the work initiated in OFP:
 
-\detailedsection{\detaileditem{\textbf{Data Pipeline}}{}{}{}{\item{Worked on developing {\textit{\textbf{strong underlying process}}} to ensure our data capturing is {\textit{\textbf{consistent}}} and at point of generation.}\item{Leveraged the SAP - HANA sidecar for accessing the data our process generate.}\item{This is a very significant portion of the digitization journey and takes time. Established and ingrained the new processes into our work culture abalbing a high degree of reliance on the underlying data and it's reliability; making it reproducible and repeatable.}}\detaileditem{\textbf{Replace}}{}{}{}{\item{As a first step worked on {\textit{\textbf{making analysis automated}}} which were otherwise generated by individuals.}\item{To make the process smooth and make sure we develop trust on the new system, started replacing one analysis at a time, deploying automated process in-parallel.}\item{{\textit{\textbf{Leveraged R - open source programming language}}} to connect the data and work with it to deliver majority of the analytics, deploying programmers where necessary.}\item{Example of automated analytics include our OFP on-track report and shipment analytics, order bank analysis, configuration process automation, production control process improvements etc.}}\detaileditem{\textbf{Innovate}}{}{}{}{\item{With the analytics in-place, focus is on going beyond and getting more values out of the data.}\item{As an example of this approach, leveraged historical sales to {\textit{\textbf{generate rolling sales forecast}}} utilizing multiple forecasting models and ensembling the results.}\item{Another area was to identify current equivalent products for the old obsolete ones. I deployed {\textit{\textbf{clustering approach using machine learning algorithm}}} to automate this process.}\item{A third example is deployment of {\textit{\textbf{SAP - IBP}}}, a first in Deere Worldwide for making our S\&OP process capable, fast and structured.}\item{As a next step in this journey we have now initiated few {\textit{\textbf{fully autonomous deployment}}},making analytics available on schedule.}}\detaileditem{\textbf{My skills}}{}{}{}{\item{Understanding of Data Science, leveraging the same for Business Analytics and lead transformation projects.\hspace*{\fill} {\textit{ - Expert.}}}\item{R Programming Language for analytics, visualization and reporting. \hspace*{\fill}  {\textit{- Moderate.}}}\item{Tableau for data visualization and reports. \hspace*{\fill}  {\textit{- Moderate.}}}\item{MS Excel. \hspace*{\fill}  {\textit{- Expert.}}}\item{Python Programming Language. \hspace*{\fill}  {\textit{- Beginner.}}}\item{This resume is programmatically generated using R-language and vitae package. Data is in stored in a googlesheet, making the generation process repeatable for updates. Code and details at:  \url{https://github.com/r-kale/rahul_kale_cv.git}}}}
+\begin{cventries}
+    \cventry{\textbf{Data Pipeline}}{}{}{}{\begin{cvitems}
+\item Worked on developing {\textit{\textbf{strong underlying process}}} to ensure our data capturing is {\textit{\textbf{consistent}}} and at point of generation.
+\item Leveraged the SAP - HANA sidecar for accessing the data our process generate.
+\item This is a very significant portion of the digitization journey and takes time. Established and ingrained the new processes into our work culture abalbing a high degree of reliance on the underlying data and it's reliability; making it reproducible and repeatable.
+\end{cvitems}}
+    \cventry{\textbf{Replace}}{}{}{}{\begin{cvitems}
+\item As a first step worked on {\textit{\textbf{making analysis automated}}} which were otherwise generated by individuals.
+\item To make the process smooth and make sure we develop trust on the new system, started replacing one analysis at a time, deploying automated process in-parallel.
+\item {\textit{\textbf{Leveraged R - open source programming language}}} to connect the data and work with it to deliver majority of the analytics, deploying programmers where necessary.
+\item Example of automated analytics include our OFP on-track report and shipment analytics, order bank analysis, configuration process automation, production control process improvements etc.
+\end{cvitems}}
+    \cventry{\textbf{Innovate}}{}{}{}{\begin{cvitems}
+\item With the analytics in-place, focus is on going beyond and getting more values out of the data.
+\item As an example of this approach, leveraged historical sales to {\textit{\textbf{generate rolling sales forecast}}} utilizing multiple forecasting models and ensembling the results.
+\item Another area was to identify current equivalent products for the old obsolete ones. I deployed {\textit{\textbf{clustering approach using machine learning algorithm}}} to automate this process.
+\item A third example is deployment of {\textit{\textbf{SAP - IBP}}}, a first in Deere Worldwide for making our S\&OP process capable, fast and structured.
+\item As a next step in this journey we have now initiated few {\textit{\textbf{fully autonomous deployment}}},making analytics available on schedule.
+\end{cvitems}}
+    \cventry{\textbf{My skills}}{}{}{}{\begin{cvitems}
+\item Understanding of Data Science, leveraging the same for Business Analytics and lead transformation projects.\hspace*{\fill} {\textit{ - Expert.}}
+\item R Programming Language for analytics, visualization and reporting. \hspace*{\fill}  {\textit{- Moderate.}}
+\item Tableau for data visualization and reports. \hspace*{\fill}  {\textit{- Moderate.}}
+\item MS Excel. \hspace*{\fill}  {\textit{- Expert.}}
+\item Python Programming Language. \hspace*{\fill}  {\textit{- Beginner.}}
+\item This resume is programmatically generated using R-language and vitae package. Data is in stored in a googlesheet, making the generation process repeatable for updates. Code and details at:  \url{https://github.com/r-kale/rahul_kale_cv.git}
+\end{cvitems}}
+\end{cventries}
 
 \hypertarget{distinctive-mentions}{%
 \section{Distinctive Mentions}\label{distinctive-mentions}}
 
-\briefsection{\briefitem{\textbf{2019 President Award of Excellence} \newline Trade Flow Realignment Project}{2019}{}\briefitem{\textbf{Outstanding Team Achievement} \newline Dewas Business Improvement Team}{2019}{}\briefitem{\textbf{Trade Secret: P28429} \newline Export Production Planning and Dispatch tool.}{2018}{}\briefitem{\textbf{A\&T Asset Project of the Year} \newline m\$ 40+ reduction in assets in Pune, Augusta and EU}{2017}{}\briefitem{\textbf{CEO Award} \newline 5C Platform introduction in India}{2010}{}\briefitem{\textbf{2010 President Award of Excellence} \newline 5C Platform introduction in India}{2010}{}}
+\begin{cvhonors}
+    \cvhonor{}{\textbf{2019 President Award of Excellence} \newline Trade Flow Realignment Project}{}{2019}
+    \cvhonor{}{\textbf{Outstanding Team Achievement} \newline Dewas Business Improvement Team}{}{2019}
+    \cvhonor{}{\textbf{Trade Secret: P28429} \newline Export Production Planning and Dispatch tool.}{}{2018}
+    \cvhonor{}{\textbf{A\&T Asset Project of the Year} \newline m\$ 40+ reduction in assets in Pune, Augusta and EU}{}{2017}
+    \cvhonor{}{\textbf{CEO Award} \newline 5C Platform introduction in India}{}{2010}
+    \cvhonor{}{\textbf{2010 President Award of Excellence} \newline 5C Platform introduction in India}{}{2010}
+\end{cvhonors}
+
+\hypertarget{intrests}{%
+\section{Intrests}\label{intrests}}
 
 \end{document}
