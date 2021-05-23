@@ -90,14 +90,17 @@ wrk_list <- wrk_exp %>%
 ```{r distinctive_mentions,include=FALSE}
 awards <- googlesheets4::read_sheet(
   "https://docs.google.com/spreadsheets/d/1X6zGvsi7PJzCpddrmdG5CHUz_4oWUFuBtaK2dLLy7bg", sheet = "distinctive_mentions") %>% janitor::clean_names() %>% 
+  mutate(modifiers = if_else(is.na(modifiers),"",modifiers)) %>% 
   arrange(desc(year)) 
 
 award_list <- awards %>% 
-  mutate(aw_list = paste0("\\textbf{",year," - ",mention,"}",
+  mutate(aw_list = paste0(modifiers,
+                          "- \\hspace{5mm}",
+                          "\\textbf{",year," - ",mention,"}",
                           "\\newline",
                           "\\textit{",details,"}")) %>% 
   select(aw_list)
-award_list <- glue::glue_collapse(paste0("-   ",award_list$aw_list),sep = "\n")
+award_list <- glue::glue_collapse(paste0(award_list$aw_list),sep = "\n")
 ```
 
 `r award_list`
